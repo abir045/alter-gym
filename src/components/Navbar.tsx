@@ -32,7 +32,7 @@ const Navbar = (props: Props) => {
         </li>
 
         <li>
-          <button className=" bg-[#f2f2f2] text-[#1D2229] px-[51px] pt-[19px] pb-[20px] text-[22px] leading-[26px] rounded ">
+          <button className="bg-[#f2f2f2] text-[#1D2229] px-[51px] pt-[19px] pb-[20px] text-[22px] leading-[26px] rounded ">
            Book Class
           </button>
         </li>

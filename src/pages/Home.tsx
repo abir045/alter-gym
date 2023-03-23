@@ -9,6 +9,7 @@ import midBanner from "../assets/midBanner.svg"
 import motivation from "../assets/motivation.svg"
 import Background from "../assets/Background.jpg"
 import inspire from "../assets/inspire.svg"
+import {motion} from "framer-motion"
 
 type Props = {}
 
@@ -19,23 +20,49 @@ const Home = (props: Props) => {
   return (
      <div>
         <div className='flex-col relative'>
-          <div className='content-mbCover md:content-hero w-full md:px-[10%]'>
+          
+        <div className='content-mbCover md:content-hero w-full md:px-[10%]'>
            </div>
 
-          <div className='z-[10] absolute top-1/3  md:absolute md:top-1/2  md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 '>
+          <div 
+          className='z-[10] absolute top-1/3  md:absolute md:top-1/2  md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 '
+          >
           
+          <motion.div
+          initial="hidden"
+            whileInView="visible"
+            viewport={{once: true, amount: 0.5}}
+            transition={{ duration:0.5 }}
+            variants={{
+              hidden: { opacity: 0, x: -50},
+              visible: { opacity: 1, x: 0} }}
+          
+          >
+
+            <img   src={bannerText} />
+
+          </motion.div>
+
           
 
-           <img   src={bannerText} />
-
-          <div className='flex-col space-y-5 items-center text-center mt-10 md:flex-row md:text-center md:space-x-3'>
+          <motion.div 
+          initial="hidden"
+            whileInView="visible"
+            viewport={{once: true, amount: 0.5}}
+            transition={{ duration:0.5 }}
+            variants={{
+              hidden: { opacity: 0, x: -50},
+              visible: { opacity: 1, x: 0} }}
+          className='flex-col space-y-5 items-center text-center mt-10 md:flex-row md:text-center md:space-x-3'>
+           
+           
            <button className='px-[50px] pt-[19px] pb-[20px]  bg-[#a1f65e]  text-[22px] leading-[26px] font-semibold rounded font-lato'>
             Start Today
           </button>
           <button className='  text-[#ffffff] border-2 border-solid border-[#FFFFFF]  px-[50px] pt-[19px] pb-[20px]  bg-transparent  text-[22px] leading-[26px] font-semibold rounded font-lato'>
             About Me
           </button>
-          </div>
+          </motion.div>
 
           
           </div>          
@@ -116,29 +143,29 @@ const Home = (props: Props) => {
 
 
              {/* About */}
-            <div className='items-center md:flex  md:space-x-[5%] md:px-[15%]'>
+            <div className='items-center  md:flex  md:space-x-5 md:px-[15%]'>
               {/* left side */}
               <div className=''>
-                <div className='w-full'>
+                <div className=''>
                 <h6 className='text-[#524FF5] text-xl uppercase font-semibold leading-[22px]'>About</h6>
-                 <p className='text-[#1b2129] text-[45px] leading-[50px] font-bold mt-5'>Respect Your Body, It’s the Only One You Get</p>
-                 <p className='mt-10 text-xl leading-[29px] capitalize text-[#6a6a6a] font-medium font-lato'>
+                 <p className='text-[#1b2129] text-[45px] leading-[50px] font-bold '>Respect Your Body, It’s the Only One You Get</p>
+                 <p className='mt-10 text-xl leading-[29px] capitalize text-[#6a6a6a] font-medium font-lato '>
                   It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. point of using Lorem Ipsum is
 
                  </p>  
                 </div>
 
 
-                <div className='md:flex md:items-center md:justify-around bg-[#f0f0f0] mt-10 py-5 w-full'>
-                  <div className='mx-[5%]'>
+                <div className='md:flex md:items-center md:justify-around bg-[#f0f0f0] mt-10 py-5 '>
+                  <div className='mx-[5%] w-full'>
                     <h3 className='text-[#1b2129] text-3xl font-bold leading-[33px] '>Motivation</h3>
                      
-                     <p className='text-xl leading-[29px] capitalize font-medium text-[#6a6a6a] font-lato '>
+                     <p className='text-xl leading-[29px] capitalize font-medium text-[#6a6a6a] font-lato'>
                       It is a long established fact that a reader will be distracted
                      </p>
                   </div>
 
-                   <div className='px-[5%] w-full'>
+                   <div className='w-full'>
                     <img  src={motivation} />
                    </div>
                  
@@ -146,17 +173,17 @@ const Home = (props: Props) => {
                 </div>
 
 
-                <div className='md:flex md:justify-around bg-[#f0f0f0] mt-10 py-5'>
+                <div className='md:flex md:justify-around bg-[#f0f0f0] mt-5  p-5'>
                   
 
-                   <div className='px-[5%] w-full'>
+                   <div className='w-full'>
                     <img src={inspire} />
                    </div>
 
-                   <div className='px-[5%] w-full'>
+                   <div className='px-[5%] w-full flex-col items-center'>
                     <h3 className='text-[#1b2129] text-3xl font-bold leading-[33px] '> Inspire</h3>
                      
-                     <p className='text-xl leading-[29px] capitalize font-medium text-[#6a6a6a] font-lato'>
+                     <p className='text-xl leading-[29px] capitalize font-medium text-[#6a6a6a] font-lato '>
                    will be distracted by readable content using Lorem Ipsum                      </p>
                   </div>
                  
@@ -166,18 +193,11 @@ const Home = (props: Props) => {
               </div>
 
               {/* right side */}
-              <div className='w-full'>
-               <img className='w-full' src={Background} alt="bakcground" /> 
+              <div className='w-full '>
+               <img className='' src={Background} alt="bakcground" /> 
               </div>
 
             </div>
-
-
-               
-
-         
-
-
          
         </div>
         
